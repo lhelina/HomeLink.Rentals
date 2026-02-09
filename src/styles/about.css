@@ -1,0 +1,294 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", arial, sans-serif;
+  background-color: #d2e3f1;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 20px;
+  background: #4c7999;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-section img {
+  width: 38px;
+}
+
+.brand-main {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand-sub {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.brand-text {
+  line-height: 1.1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #a4a711;
+}
+
+.active-link {
+  color: #a4a711;
+  font-weight: 700;
+}
+
+.posthome-btn {
+  padding: 6px 14px;
+  background: #a4a711;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.posthome-btn:hover {
+  background: #8f940f;
+}
+
+/* SIDEBAR */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 250px;
+  height: 100%;
+  background: #1f2b3a;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.35s ease;
+  z-index: 2000;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+}
+
+.sidebar .posthome-btn {
+  padding: 12px;
+  font-size: 15px;
+  background: #a4a711;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.sidebar .posthome-btn:hover {
+  background: #8f940f;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+/* ABOUT + COMPLAINT */
+.about,
+.complaint-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.about h2,
+.complaint-section h3 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #143555;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #a4a711;
+}
+
+.about p {
+  font-size: 17px;
+  color: #4c5a6d;
+  text-align: justify;
+  padding: 0 10px;
+}
+
+.complaint-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.complaint-section label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #143555;
+}
+
+.complaint-section input,
+.complaint-section textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.complaint-section input:focus,
+.complaint-section textarea:focus {
+  border-color: #4c7999;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(76, 121, 153, 0.2);
+}
+
+.complaint-section textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.complaint-section button[type="submit"] {
+  padding: 14px;
+  background-color: #a4a711;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.complaint-section button[type="submit"]:hover {
+  background-color: #8f940f;
+  transform: translateY(-1px);
+}
+
+/* FOOTER */
+.footer {
+  background-color: #143555;
+  padding: 50px 20px 30px;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-section .anchors {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-section .anchors a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-section .anchors a:hover {
+  text-decoration: underline;
+  color: #a4a711;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 990px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .about,
+  .complaint-section {
+    margin: 30px 15px;
+    padding: 20px;
+  }
+
+  .about h2,
+  .complaint-section h3 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about h2,
+  .complaint-section h3 {
+    font-size: 24px;
+  }
+
+  .about p {
+    padding: 0;
+  }
+}

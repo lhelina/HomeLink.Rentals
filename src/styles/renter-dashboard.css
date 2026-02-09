@@ -1,0 +1,468 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: arial, sans-serif;
+  background-color: #d2e3f1;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+.btn-primary {
+  background: #4c7999;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #3c6e91;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #a4a711;
+  color: white;
+  border-radius: 6px;
+  margin-right: 20px;
+  transition: background 0.3s;
+}
+.logout-btn:hover {
+  background-color: #8f940f;
+  cursor: pointer;
+}
+
+/* --- Navbar Styles --- */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 30px;
+  background: #4c7999;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 0;
+  margin-top: 0;
+  margin-right: 20px;
+}
+
+.logo-section img {
+  width: 60px;
+}
+
+.brand-main {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.brand-sub {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #a4a711;
+}
+
+.nav-links a i {
+  margin-right: 5px;
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover i {
+  color: #a4a711;
+}
+.nav-links a.active-link {
+  color: #a4a711;
+  font-weight: 600;
+}
+
+.nav-links a.active-link i {
+  color: #a4a711;
+}
+/* SIDEBAR + MOBILE MENU */
+.menu-btn {
+  font-size: 28px;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  display: none; /* hidden on large screens */
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  z-index: 2000;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #1f2b3a;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.3s;
+  z-index: 3000;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.close-btn {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Overlay */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2500;
+}
+
+/* --- Dashboard Layout & Header Styles --- */
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: white;
+}
+
+.dashboard-content h1 {
+  font-size: 32px;
+  color: #1f2b3a;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.icon-dark {
+  color: #4c7999;
+  margin-right: 10px;
+}
+
+.dashboard-section {
+  margin-bottom: 50px;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+}
+
+.dashboard-section h2 {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2b3a;
+  margin-bottom: 25px;
+}
+
+/* --- Renter Dashboard Components --- */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.stat-card {
+  background: #f4f6f8;
+  border-left: 5px solid #4c7999;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card i {
+  font-size: 24px;
+  color: #4c7999;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1f2b3a;
+  margin: 0;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.listing-preview {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.listing-preview img {
+  width: 150px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.listing-details {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card-list .listing-preview .listing-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.listing-details h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #1f2b3a;
+}
+
+.listing-details p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.application-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.application-item p {
+  text-align: left;
+  margin: 2px 0;
+}
+
+.application-date {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.status-pending .status-badge {
+  background-color: #f0ad4e;
+}
+
+.status-approved .status-badge {
+  background-color: #a4a711;
+}
+
+.status-viewed .status-badge {
+  background-color: #4c7999;
+}
+
+/* --- Footer Styles --- */
+
+.footer {
+  background-color: #143555;
+  padding: 50px 20px 30px;
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section h3 {
+  margin-bottom: 1opx;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-section .anchors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer-section .anchors a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.footer-section .anchors a:hover {
+  text-decoration: underline;
+  color: #a4a711;
+}
+
+/* --- Dashboard Media Queries (Responsiveness) --- */
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hide links */
+  }
+
+  .menu-btn {
+    display: block; /* show the menu button */
+  }
+  .nav-bar,
+  .navbar {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .dashboard-content h1 {
+    text-align: left;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .listing-preview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .listing-preview img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .card-list .listing-preview .listing-details {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .listing-details h3 {
+    font-size: 20px;
+  }
+
+  .listing-details p {
+    text-align: left;
+  }
+
+  .listing-details .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .application-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .status-badge {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 20px 10px;
+  }
+
+  .logo-section img {
+    width: 38px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
